@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class Airport {
@@ -36,6 +37,32 @@ public class Airport {
 
     public void addOutgoingFlightLocation(Airport airport){
         outgoingFlightsLocations.add(airport);
+    }
+
+    public void setOutgoingFlightsLocations(Set<Airport> outgoingFlightsLocations){
+        this.outgoingFlightsLocations = outgoingFlightsLocations;
+    }
+
+    @Override
+    public String toString() {
+        return "Airport{" +
+                "id='" + id + '\'' +
+                ", location='" + location + '\'' +
+                ", incomingFlightsLocations=" + incomingFlightsLocations +
+                ", outgoingFlightsLocations=" + outgoingFlightsLocations +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Airport airport)) return false;
+        return Objects.equals(id, airport.id) && Objects.equals(location, airport.location) && Objects.equals(incomingFlightsLocations, airport.incomingFlightsLocations) && Objects.equals(outgoingFlightsLocations, airport.outgoingFlightsLocations);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, location);
     }
 }
 
