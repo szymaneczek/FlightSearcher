@@ -48,8 +48,8 @@ public class Airport {
         return "Airport{" +
                 "id='" + id + '\'' +
                 ", location='" + location + '\'' +
-                ", incomingFlightsLocations=" + incomingFlightsLocations +
-                ", outgoingFlightsLocations=" + outgoingFlightsLocations +
+                ", incomingFlightsLocations=" + incomingFlightsLocations.size() +
+                ", outgoingFlightsLocations=" + outgoingFlightsLocations.size() +
                 '}';
     }
 
